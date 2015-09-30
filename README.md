@@ -1,6 +1,6 @@
 #Ticker
 
-An ticker for [OpenStore](https://github.com/aakilfernandes/OpenStore)
+An exchange rate ticker for [OpenStore](https://github.com/aakilfernandes/OpenStore). Ticker runs every 6 hours as long as the price has changed at least 1%.
 
 ##Usage
 
