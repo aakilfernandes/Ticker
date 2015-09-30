@@ -4,7 +4,8 @@ An ticker for [OpenStore](https://github.com/aakilfernandes/OpenStore)
 
 ##Usage
 
-	OpenStore.get("0xdc99b79555385ab2fe0ff28c3c954a07b28aac5e",symbol)
+	OpenStore.getValue("0xdc99b79555385ab2fe0ff28c3c954a07b28aac5e",symbol)
+	OpenStore.getTimestamp("0xdc99b79555385ab2fe0ff28c3c954a07b28aac5e",symbol)
 
 ###Symbols
 
