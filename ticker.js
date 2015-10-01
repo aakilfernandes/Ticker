@@ -21,7 +21,7 @@ request('https://coinmarketcap-nexuist.rhcloud.com/api/eth',function(error,respo
 
 	for(currency in rates){
 
-		var key = 'CMC:ETH:'+currency.toUpperCase()
+		var key = 'CMC:TETH:'+currency.toUpperCase()
 			,newRate = rates[currency]
 			,newRateRounded = newRate.round()
 			,rateBytes = OpenStore.getValue(account,key)

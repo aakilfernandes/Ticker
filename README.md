@@ -9,17 +9,18 @@ An exchange rate ticker for [OpenStore](https://github.com/aakilfernandes/OpenSt
 
 ###Symbols
 
+###CoinMarketCap.io
 
-####CoinMarketCapi.io
+`CMC:TETH:USD`
+`CMC:TETH:EUR`
+`CMC:TETH:CNY`
+`CMC:TETH:CAD`
+`CMC:TETH:RUB`
+`CMC:TETH:BTC`
 
-[https://coinmarketcap-nexuist.rhcloud.com/api/eth](https://coinmarketcap-nexuist.rhcloud.com/api/eth)
-
-`CMC:ETH:USD`
-`CMC:ETH:EUR`
-`CMC:ETH:CNY`
-`CMC:ETH:CAD`
-`CMC:ETH:RUB`
-`CMC:ETH:BTC`
+All values are returned it denominations of Tether (1000000000000 Ether). So the price of 1 USD is
+	
+	Ether = OpenStore.getValue("0xdc99b79555385ab2fe0ff28c3c954a07b28aac5e").div('1000000000000')
 
 ## Installing
 
