@@ -18,9 +18,11 @@ An exchange rate ticker for [OpenStore](https://github.com/aakilfernandes/OpenSt
 `CMC:TETH:RUB`
 `CMC:TETH:BTC`
 
-All values are returned it denominations of Tether (1000000000000 Ether). So the price of 1 USD is
+All values are returned it denominations of Tether (1000000000000 Ether). So the price of 1 USD can be computed by
 	
-	Ether = OpenStore.getValue("0xdc99b79555385ab2fe0ff28c3c954a07b28aac5e").div('1000000000000')
+	teth_usd_hex = OpenStore.getValue("0xdc99b79555385ab2fe0ff28c3c954a07b28aac5e",'CMC:TETH:USD')
+	teth_usd = web3.toBigNumber(tether_usd_hex)
+	eth_usd = teth_usd.div('1000000000000')
 
 ## Installing
 
