@@ -27,13 +27,18 @@ request('https://coinmarketcap-nexuist.rhcloud.com/api/eth',function(error,respo
 			,rateBytes = OpenStore.getValue(account,key)
 			,rateBytesPadded = rateBytes.length===2 ? rateBytes+'00' : rateBytes
 			,rate = web3.toBigNumber(rateBytesPadded)
-			,timestamp = OpenStore.getTimestamp(account,currency)
+			,timestamp = OpenStore.getTimestamp(account,key)
 			,difference = newRate.minus(rate)
 			,percentChange = difference.div(rate)
 			,absolutePercentChange = percentChange.greaterThanOrEqualTo(0) ? percentChange : percentChange.times('-1')
-			,doSubmit = timestamp.equals(0) || absolutePercentChange.greaterThan('.01') || rate.equals(0) && newRate.notEqualTo(0)
+			,doSubmit = timestamp.equals(0) || absolutePercentChange.greaterThan('.01') || (rate.equals(0) && newRate.notEqualTo(0))
 
-		console.log(key,rate.toString(),newRateRounded.toString(),doSubmit)
+		console.log('=========================')
+		console.log(key)
+		console.log('rates',rate.toString(),newRateRounded.toString())
+		console.log('% change',percentChange.toString())
+		console.log('timestamp',timestamp.toString())
+		console.log('doSubmit',doSubmit)
 
 		if(doSubmit){
 			OpenStore.set(key,newRateRounded)
